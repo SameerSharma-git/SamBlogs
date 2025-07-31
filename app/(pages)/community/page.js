@@ -132,7 +132,7 @@ export default function CommunityPage() {
         </section>
 
         {/* Community Features Section */}
-        <section className="py-20 px-4 md:px-8 xl:px-[10vw] bg-surface rounded-lg shadow-lg mx-auto my-12 md:w-[90vw] transition-all duration-500 hover:shadow-2xl border-2 border-blue-600">
+        <section className="py-20 px-4 md:px-8 xl:px-[10vw] bg-surface rounded-lg shadow-lg mx-auto my-12 w-[96vw] md:w-[90vw] transition-all duration-500 hover:shadow-2xl border-2 border-blue-600">
           <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12 text-blue-600">
             What You'll Find Here
           </h2>
@@ -256,7 +256,7 @@ export default function CommunityPage() {
         {/* Final Call to Action */}
         <section
           ref={ctaRef}
-          className="py-20 px-4 md:px-8 xl:px-[10vw] text-center bg-surface rounded-lg shadow-lg mx-auto my-12 md:w-[90vw] transition-all duration-500 hover:scale-[1.002] hover:shadow-2xl border-2 border-blue-600"
+          className="py-20 px-4 md:px-8 xl:px-[10vw] text-center bg-surface rounded-lg shadow-lg mx-auto my-12 w-[96vw] md:w-[90vw] transition-all duration-500 hover:scale-[1.002] hover:shadow-2xl border-2 border-blue-600"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-blue-600">
             Ready to Connect?
