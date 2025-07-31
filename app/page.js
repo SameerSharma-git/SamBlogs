@@ -42,7 +42,7 @@ export default function Home({}) {
         </div>
 
         {/* Invite section */}
-        <div id="community" className="flex flex-col w-[96%] md:flex-row md:w-[90vw] items-center justify-center py-16 px-4 md:px-7 bg-surface rounded-lg shadow-lg mx-auto transition-all duration-500 hover:scale-[1.005] hover:shadow-2xl border-2 border-blue-600">
+        <div id="community" className="flex flex-col w-[96vw] md:flex-row md:w-[90vw] items-center justify-center py-16 px-4 md:px-7 bg-surface rounded-lg shadow-lg mx-auto transition-all duration-500 hover:scale-[1.005] hover:shadow-2xl border-2 border-blue-600">
           <div className="md:w-1/2 text-center md:text-left md:pr-8 mb-6 md:mb-0">
             <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4 text-primary">
               Become a Part of Our <div className="text-blue-600">Blogging Family!</div>
