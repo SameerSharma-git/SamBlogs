@@ -13,7 +13,7 @@ export default function Home({}) {
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-primary">
               Welcome to <div className="text-blue-600">SamBlogs</div>
             </h1>
-            <p className="text-xl md:text-2xl text-secondary mb-6">
+            <p className="text-xl px-2 md:px-0 md:text-2xl text-secondary mb-6">
               Your go-to source for insightful content on <br />
               {/* Removed Type.js span as Type.js functionality is removed */}
             </p>
@@ -32,7 +32,7 @@ export default function Home({}) {
               </Link>
             </div>
           </div>
-          <div className="md:w-1/2 flex justify-center">
+          <div className="w-[98vw] md:w-1/2 flex justify-center">
             <img
               src="/images/pexels-plann-2999237-4549414.jpg"
               alt="SamBlogs Hero Image"
