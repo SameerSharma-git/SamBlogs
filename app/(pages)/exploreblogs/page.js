@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import BlogGrid from '@/components/BlogGrid';
-import fetchBlogs from '@/lib/actions/fetchBlogs';
+import { fetchAllBlogs } from '@/lib/actions/fetchBlogs';
 
 export default async function ExploreBlogsPage() {
   const blogPosts = JSON.parse(JSON.stringify((await fetchAllBlogs())))
