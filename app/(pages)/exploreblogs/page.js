@@ -4,7 +4,7 @@ import BlogGrid from '@/components/BlogGrid';
 import fetchBlogs from '@/lib/actions/fetchBlogs';
 
 export default async function ExploreBlogsPage() {
-  const blogPosts = JSON.parse(JSON.stringify((await fetchBlogs({}))))
+  const blogPosts = JSON.parse(JSON.stringify((await fetchAllBlogs())))
 
   return (
     <>
