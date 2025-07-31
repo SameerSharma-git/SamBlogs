@@ -23,6 +23,7 @@
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.60.0",
     "react-redux": "^9.2.0",
+    "react-top-loading-bar": "^3.0.2”,
     "styled-jsx": "^5.1.7"
   },
   "devDependencies": {
