@@ -331,6 +331,8 @@ const AddNewBlogForm = React.memo(function AddNewBlogForm({ user }) {
         }
       });
 
+      if (!data.imageURL) { data.imageURL = "/images/pexels-pixabay-159618.jpg" }
+
       const newBlogData = {
         ...data,
         userId: user._id,
