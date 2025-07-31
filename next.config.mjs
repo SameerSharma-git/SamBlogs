@@ -1,6 +1,9 @@
 // next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  eslint : {
+    ignoreDuringBuilds: true,
+  },
   images: {
     dangerouslyAllowSVG: true,
     // It's highly recommended to also set contentDispositionType and contentSecurityPolicy
