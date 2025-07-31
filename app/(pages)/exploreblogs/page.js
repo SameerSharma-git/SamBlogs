@@ -3,6 +3,8 @@ import Link from 'next/link';
 import BlogGrid from '@/components/BlogGrid';
 import { fetchAllBlogs } from '@/lib/actions/fetchBlogs';
 
+export const dynamic = 'force-dynamic'
+
 export default async function ExploreBlogsPage() {
   const blogPosts = JSON.parse(JSON.stringify((await fetchAllBlogs())))
 
