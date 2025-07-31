@@ -1,0 +1,327 @@
+const mockUsers = [
+  {
+    "profilePicture": "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg",
+    "name": "Liam Carter",
+    "email": "liam.carter@example.com",
+    "password": "hashedpassword1",
+    "bio": "Aspiring blogger and tech geek.",
+    "role": "writer",
+    "following": [],
+    "followers": [],
+    "posts": []
+  },
+  {
+    "profilePicture": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg",
+    "name": "Sophia Bennett",
+    "email": "sophia.bennett@example.com",
+    "password": "hashedpassword2",
+    "bio": "Food lover and recipe creator.",
+    "role": "writer",
+    "following": [],
+    "followers": [],
+    "posts": []
+  },
+  {
+    "profilePicture": "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg",
+    "name": "Noah Walker",
+    "email": "noah.walker@example.com",
+    "password": "hashedpassword3",
+    "bio": "Digital nomad and photographer.",
+    "role": "spectator",
+    "following": [],
+    "followers": [],
+    "posts": []
+  },
+  {
+    "profilePicture": "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg",
+    "name": "Ava Mitchell",
+    "email": "ava.mitchell@example.com",
+    "password": "hashedpassword4",
+    "bio": "Passionate about writing and poetry.",
+    "role": "writer",
+    "following": [],
+    "followers": [],
+    "posts": []
+  },
+  {
+    "profilePicture": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+    "name": "Ethan Reyes",
+    "email": "ethan.reyes@example.com",
+    "password": "hashedpassword5",
+    "bio": "Web developer and open source fan.",
+    "role": "writer",
+    "following": [],
+    "followers": [],
+    "posts": []
+  }
+]
+
+const mockBlogPosts = [
+  {
+    "userId": "user1",
+    "title": "Exploring the Future of AI Technology",
+    "slug": "exploring-the-future-of-ai-technology",
+    "excerpt": "An overview of upcoming trends and breakthroughs in artificial intelligence.",
+    "content": "Artificial Intelligence (AI) continues to be one of the most transformative technologies of our time. From natural language processing to machine learning, AI is rapidly reshaping the way industries operate, driving automation, and enhancing decision-making processes. In the coming years, we can expect AI to become even more integrated into daily life, with advancements in areas like autonomous vehicles, personalized healthcare, and smart cities. However, with these advancements come ethical considerations and challenges, including privacy concerns and the impact on the workforce. As AI evolves, it's essential to strike a balance between innovation and responsible implementation. This article delves into the future trends of AI technology, the sectors that will benefit most, and the precautions necessary to harness its potential safely.",
+    "author": "Liam Carter",
+    "category": "Tech",
+    "date": "2025-07-29T00:00:00.000Z",
+    "updatedAt": "2025-07-29T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/1181355/pexels-photo-1181355.jpeg"
+  },
+  {
+    "userId": "user2",
+    "title": "10 Easy Recipes for Busy Weeknights",
+    "slug": "10-easy-recipes-for-busy-weeknights",
+    "excerpt": "Delicious and quick meals perfect for hectic schedules.",
+    "content": "Balancing work, family, and personal time can make dinner preparation feel like a challenge. Luckily, you don’t have to compromise on nutrition or taste to whip up something quickly. These ten easy recipes are designed for busy weeknights, focusing on minimal ingredients, quick prep, and maximum flavor. From stir-fries and sheet pan meals to hearty salads and one-pot pastas, these dishes are perfect for those who want a satisfying meal without spending hours in the kitchen. We also include tips on batch cooking and ingredient swaps to keep your meals interesting and tailored to your preferences. Whether you’re cooking for one or feeding a family, these recipes will simplify your evening routine.",
+    "author": "Sophia Bennett",
+    "category": "Food",
+    "date": "2025-07-28T00:00:00.000Z",
+    "updatedAt": "2025-07-28T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg"
+  },
+  {
+    "userId": "user3",
+    "title": "How to Capture Stunning Travel Photos",
+    "slug": "how-to-capture-stunning-travel-photos",
+    "excerpt": "Tips and techniques to improve your photography on the road.",
+    "content": "Travel photography is more than just snapping pictures; it’s about telling a story and capturing the essence of a place. To create stunning travel photos, start by paying attention to lighting—early mornings and late afternoons often provide the best natural light. Composition is also key: use the rule of thirds, leading lines, and interesting foregrounds to add depth. Don’t hesitate to experiment with angles and perspectives, and always be patient to catch the perfect moment. Beyond technique, engaging with local culture and people can bring authenticity to your shots. With practice and an eye for detail, you can turn ordinary travel memories into extraordinary photographs that evoke emotion and inspire others to explore.",
+    "author": "Noah Walker",
+    "category": "Travel",
+    "date": "2025-07-27T00:00:00.000Z",
+    "updatedAt": "2025-07-27T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
+  },
+  {
+    "userId": "user4",
+    "title": "The Beauty of Minimalist Design",
+    "slug": "the-beauty-of-minimalist-design",
+    "excerpt": "Understanding the principles and benefits of minimalism in design.",
+    "content": "Minimalist design has gained widespread popularity due to its clean, functional aesthetics and emphasis on simplicity. The core principle is 'less is more,' focusing on essentials and removing clutter to create an environment that feels calm and intentional. Minimalism can be applied to interior design, graphic design, fashion, and even lifestyle choices. By using neutral colors, open spaces, and purposeful furniture, minimalist design fosters clarity and focus, reducing distractions. Beyond aesthetics, this approach encourages sustainability and mindful consumption. Embracing minimalism can lead to not only beautiful spaces but also a more balanced and peaceful life.",
+    "author": "Ava Mitchell",
+    "category": "Lifestyle",
+    "date": "2025-07-26T00:00:00.000Z",
+    "updatedAt": "2025-07-26T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/274095/pexels-photo-274095.jpeg"
+  },
+  {
+    "userId": "user5",
+    "title": "Getting Started with Open Source Contribution",
+    "slug": "getting-started-with-open-source-contribution",
+    "excerpt": "A beginner’s guide to contributing to open source projects.",
+    "content": "Open source projects offer a fantastic opportunity for developers to learn, collaborate, and contribute to software that impacts millions. If you're new to open source, start by choosing projects that align with your interests or skills. Familiarize yourself with the project's README, contribution guidelines, and codebase. Don’t hesitate to ask questions in community forums or chat channels. Begin with small contributions like fixing typos, improving documentation, or resolving minor bugs. Over time, you can tackle more complex issues and features. Besides improving your coding skills, open source contribution helps build your professional network and portfolio. Remember, persistence and communication are key to becoming a valued contributor.",
+    "author": "Ethan Reyes",
+    "category": "Programming",
+    "date": "2025-07-25T00:00:00.000Z",
+    "updatedAt": "2025-07-25T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg"
+  },
+  {
+    "userId": "user1",
+    "title": "The Rise of Remote Work: Pros and Cons",
+    "slug": "the-rise-of-remote-work-pros-and-cons",
+    "excerpt": "Exploring how remote work is changing the professional landscape.",
+    "content": "Remote work has transformed the way many organizations operate, offering flexibility and expanded talent pools. Employees often appreciate the elimination of commutes and the ability to create personalized workspaces. However, remote work also poses challenges such as potential isolation, distractions at home, and blurred boundaries between work and personal life. Companies must invest in technology and foster communication to maintain team cohesion and productivity. This article explores the advantages and disadvantages of remote work, providing insights into how individuals and businesses can adapt to this evolving work culture while maintaining balance and effectiveness.",
+    "author": "Liam Carter",
+    "category": "Business",
+    "date": "2025-07-24T00:00:00.000Z",
+    "updatedAt": "2025-07-24T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/3183186/pexels-photo-3183186.jpeg"
+  },
+  {
+    "userId": "user2",
+    "title": "Healthy Eating on a Budget",
+    "slug": "healthy-eating-on-a-budget",
+    "excerpt": "Tips to maintain a nutritious diet without breaking the bank.",
+    "content": "Eating nutritious meals doesn't have to be expensive. Planning and smart shopping can help you maintain a healthy diet on a budget. Focus on whole foods like grains, beans, seasonal vegetables, and fruits, which are often affordable and versatile. Buying in bulk and cooking at home can significantly cut costs. Avoiding processed foods and limiting dining out helps maintain both health and finances. This article shares practical tips on meal planning, budgeting, and cooking strategies to help you eat well without overspending, proving that nutritious meals can be both accessible and delicious.",
+    "author": "Sophia Bennett",
+    "category": "Food",
+    "date": "2025-07-23T00:00:00.000Z",
+    "updatedAt": "2025-07-23T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg"
+  },
+  {
+    "userId": "user3",
+    "title": "Top 10 Destinations for Solo Travelers",
+    "slug": "top-10-destinations-for-solo-travelers",
+    "excerpt": "Safe and exciting places to visit alone.",
+    "content": "Solo travel offers freedom, adventure, and self-discovery. Choosing the right destinations can enhance your experience, especially for first-timers. This list highlights ten cities and countries known for their safety, friendliness, and cultural richness. From the vibrant streets of Lisbon to the tranquil landscapes of New Zealand, these locations cater to solo travelers with welcoming communities and accessible activities. Tips on accommodation, transport, and meeting fellow travelers are also provided, helping you plan a safe and memorable solo journey filled with new experiences and personal growth.",
+    "author": "Noah Walker",
+    "category": "Travel",
+    "date": "2025-07-22T00:00:00.000Z",
+    "updatedAt": "2025-07-22T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/33109/landscape-mountains-nature-valley.jpg"
+  },
+  {
+    "userId": "user4",
+    "title": "Mindfulness Practices for Daily Life",
+    "slug": "mindfulness-practices-for-daily-life",
+    "excerpt": "Simple techniques to stay present and reduce stress.",
+    "content": "Mindfulness is the practice of paying attention to the present moment without judgment. Incorporating mindfulness into daily life can reduce stress, improve focus, and promote emotional health. Techniques include mindful breathing, body scans, and conscious observation of thoughts and sensations. You don’t need special equipment or extensive time commitments—just a few minutes each day can have a positive impact. This article explores practical mindfulness exercises you can easily integrate into your routine, along with advice on overcoming common challenges and staying consistent.",
+    "author": "Ava Mitchell",
+    "category": "Lifestyle",
+    "date": "2025-07-21T00:00:00.000Z",
+    "updatedAt": "2025-07-21T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg"
+  },
+  {
+    "userId": "user5",
+    "title": "JavaScript ES6 Features You Should Know",
+    "slug": "javascript-es6-features-you-should-know",
+    "excerpt": "Key features of ES6 that improve JavaScript coding.",
+    "content": "ES6, also known as ECMAScript 2015, introduced significant improvements to JavaScript, making it easier to write cleaner and more efficient code. Features like arrow functions, template literals, destructuring assignments, and promises enhance syntax and asynchronous programming. Classes and modules allow for better code organization and reuse. Understanding these features is essential for modern JavaScript development and frameworks like React and Node.js. This article provides clear explanations and examples of the most important ES6 features, helping both beginners and experienced developers write better JavaScript.",
+    "author": "Ethan Reyes",
+    "category": "Programming",
+    "date": "2025-07-20T00:00:00.000Z",
+    "updatedAt": "2025-07-20T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/1181314/pexels-photo-1181314.jpeg"
+  },
+  {
+    "userId": "user1",
+    "title": "The Power of Networking in Your Career",
+    "slug": "the-power-of-networking-in-your-career",
+    "excerpt": "How building connections can open professional opportunities.",
+    "content": "Networking is a critical component of career growth and success. Building authentic relationships with peers, mentors, and industry leaders can provide valuable insights, advice, and opportunities. Effective networking involves active listening, genuine interest, and reciprocity. Attend industry events, participate in online forums, and leverage social media platforms like LinkedIn. Remember, quality matters more than quantity. This article explores strategies for building and maintaining a professional network, overcoming networking anxiety, and maximizing the benefits of connections for career advancement.",
+    "author": "Liam Carter",
+    "category": "Business",
+    "date": "2025-07-19T00:00:00.000Z",
+    "updatedAt": "2025-07-19T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg"
+  },
+  {
+    "userId": "user2",
+    "title": "Benefits of Regular Exercise for Mental Health",
+    "slug": "benefits-of-regular-exercise-for-mental-health",
+    "excerpt": "How physical activity supports emotional well-being.",
+    "content": "Exercise is not only beneficial for physical health but also plays a crucial role in mental well-being. Regular physical activity releases endorphins, reduces stress hormones, and improves sleep quality. It can alleviate symptoms of depression and anxiety, boost self-esteem, and enhance cognitive function. Activities don’t have to be intense; even walking, yoga, or light stretching can help. Incorporating exercise into your daily routine contributes to overall happiness and resilience. This article discusses the psychological benefits of exercise, the science behind it, and practical tips for staying active consistently.",
+    "author": "Sophia Bennett",
+    "category": "Health",
+    "date": "2025-07-18T00:00:00.000Z",
+    "updatedAt": "2025-07-18T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg"
+  },
+  {
+    "userId": "user3",
+    "title": "Packing Tips for Your Next Adventure",
+    "slug": "packing-tips-for-your-next-adventure",
+    "excerpt": "How to pack smart and light for any trip.",
+    "content": "Packing efficiently is key to stress-free travel. Start by making a checklist tailored to your destination’s weather and planned activities. Choose versatile clothing that can be layered and mixed. Use packing cubes to organize items and compress clothes, saving space. Don’t forget essentials like chargers, travel documents, and basic first aid. Limit shoes to two pairs and minimize toiletries by opting for travel sizes. Being mindful of weight helps avoid extra fees and fatigue. This guide offers practical tips to pack smart, avoid overpacking, and enjoy your journey from the moment you leave.",
+    "author": "Noah Walker",
+    "category": "Travel",
+    "date": "2025-07-17T00:00:00.000Z",
+    "updatedAt": "2025-07-17T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/462353/pexels-photo-462353.jpeg"
+  },
+  {
+    "userId": "user4",
+    "title": "Creating a Productive Home Workspace",
+    "slug": "creating-a-productive-home-workspace",
+    "excerpt": "Tips to design a comfortable and efficient area for remote work.",
+    "content": "A well-designed home workspace can significantly boost productivity and well-being when working remotely. Start by choosing a quiet spot with good natural light and minimal distractions. Invest in ergonomic furniture, including a comfortable chair and desk at the right height. Keep your space organized with storage solutions to reduce clutter. Personalize with plants or artwork to make the environment inviting. Setting boundaries with others in your household and maintaining a routine also help keep work and personal life separate. This article provides actionable advice to transform your home into a functional and inspiring workplace.",
+    "author": "Ava Mitchell",
+    "category": "Lifestyle",
+    "date": "2025-07-16T00:00:00.000Z",
+    "updatedAt": "2025-07-16T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/716398/pexels-photo-716398.jpeg"
+  },
+  {
+    "userId": "user5",
+    "title": "Understanding Asynchronous JavaScript",
+    "slug": "understanding-asynchronous-javascript",
+    "excerpt": "A deep dive into async programming concepts in JavaScript.",
+    "content": "JavaScript is single-threaded, meaning it executes code sequentially, but asynchronous programming allows non-blocking operations like fetching data or reading files. Understanding callbacks, promises, and async/await is crucial to managing asynchronous code effectively. Callbacks can lead to nested 'callback hell,' while promises provide better chaining and error handling. Async/await syntax offers a cleaner, more readable way to write asynchronous code resembling synchronous flow. Mastering these concepts improves application performance and user experience. This article explains these key asynchronous patterns, with examples and best practices to help developers write robust and maintainable code.",
+    "author": "Ethan Reyes",
+    "category": "Programming",
+    "date": "2025-07-15T00:00:00.000Z",
+    "updatedAt": "2025-07-15T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg"
+  },
+  {
+    "userId": "user1",
+    "title": "How to Manage Time Effectively",
+    "slug": "how-to-manage-time-effectively",
+    "excerpt": "Techniques and tips to improve productivity and focus.",
+    "content": "Effective time management is essential for achieving goals and reducing stress. Start by prioritizing tasks based on importance and deadlines, using tools like to-do lists or digital planners. The Pomodoro technique breaks work into focused intervals with breaks, boosting concentration. Avoid multitasking, which can reduce productivity and increase errors. Set boundaries to minimize distractions, such as turning off notifications during work periods. Reflecting regularly on your schedule helps identify time-wasters and optimize routines. Implementing these strategies can help you stay organized, meet deadlines, and maintain a healthy work-life balance.",
+    "author": "Liam Carter",
+    "category": "Business",
+    "date": "2025-07-14T00:00:00.000Z",
+    "updatedAt": "2025-07-14T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+  },
+  {
+    "userId": "user2",
+    "title": "Superfoods to Include in Your Diet",
+    "slug": "superfoods-to-include-in-your-diet",
+    "excerpt": "Nutrient-rich foods that boost health and vitality.",
+    "content": "Superfoods are nutrient-dense foods packed with vitamins, minerals, and antioxidants that promote health and prevent disease. Examples include blueberries, kale, quinoa, chia seeds, and salmon. Incorporating these into your diet can improve immune function, support heart health, and increase energy levels. Eating a variety of superfoods as part of a balanced diet ensures you get a broad range of nutrients. This article explores the benefits of popular superfoods and provides easy recipes and tips for adding them to your meals, helping you eat more healthfully and feel your best.",
+    "author": "Sophia Bennett",
+    "category": "Health",
+    "date": "2025-07-13T00:00:00.000Z",
+    "updatedAt": "2025-07-13T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg"
+  },
+  {
+    "userId": "user3",
+    "title": "Cultural Etiquette Tips for Travelers",
+    "slug": "cultural-etiquette-tips-for-travelers",
+    "excerpt": "Respectful behaviors to enhance your travel experience.",
+    "content": "Understanding and respecting cultural etiquette is essential for a positive travel experience. Different countries have unique customs regarding greetings, dining, dress codes, and social interactions. Learning a few key phrases in the local language, researching traditions, and observing locals helps avoid misunderstandings and shows respect. For example, tipping practices, gestures, and personal space norms vary widely. Being open-minded and adaptable enriches your journey, fosters meaningful connections, and prevents unintended offenses. This guide offers practical advice to navigate cultural differences smoothly and enjoy your travels with confidence and courtesy.",
+    "author": "Noah Walker",
+    "category": "Travel",
+    "date": "2025-07-12T00:00:00.000Z",
+    "updatedAt": "2025-07-12T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg"
+  },
+  {
+    "userId": "user4",
+    "title": "Benefits of Decluttering Your Home",
+    "slug": "benefits-of-decluttering-your-home",
+    "excerpt": "How a tidy space can improve mental clarity and lifestyle.",
+    "content": "Decluttering your home goes beyond aesthetics; it has significant psychological benefits. A clean, organized space can reduce stress, increase focus, and foster a sense of calm. Removing unnecessary items helps create a more functional environment and simplifies cleaning. Decluttering also encourages mindful consumption, reducing waste and saving money. Techniques like the KonMari method focus on keeping items that bring joy and purpose. This article discusses practical decluttering tips and the positive impact of a tidy home on overall well-being and productivity.",
+    "author": "Ava Mitchell",
+    "category": "Lifestyle",
+    "date": "2025-07-11T00:00:00.000Z",
+    "updatedAt": "2025-07-11T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/1902227/pexels-photo-1902227.jpeg"
+  },
+  {
+    "userId": "user5",
+    "title": "Understanding RESTful APIs",
+    "slug": "understanding-restful-apis",
+    "excerpt": "Basics of REST architecture and how APIs work.",
+    "content": "RESTful APIs are a key technology enabling communication between client and server in web development. Representational State Transfer (REST) is an architectural style that uses HTTP methods for operations like GET, POST, PUT, and DELETE. RESTful APIs expose endpoints that allow applications to interact with data and services. They are stateless, scalable, and easy to use, making them popular for modern web and mobile applications. This article explains REST principles, HTTP methods, and best practices for designing and consuming RESTful APIs, providing a solid foundation for developers working with web services.",
+    "author": "Ethan Reyes",
+    "category": "Programming",
+    "date": "2025-07-10T00:00:00.000Z",
+    "updatedAt": "2025-07-10T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg"
+  },
+  {
+    "userId": "user1",
+    "title": "Tips for Effective Public Speaking",
+    "slug": "tips-for-effective-public-speaking",
+    "excerpt": "How to overcome fear and engage your audience.",
+    "content": "Public speaking is a valuable skill that can boost your confidence and career opportunities. To speak effectively, start by understanding your audience and tailoring your message accordingly. Practice your speech multiple times, focusing on clear pronunciation, pacing, and eye contact. Use storytelling, visuals, and pauses to keep the audience engaged. Managing nervousness is key; techniques like deep breathing and visualization can help. Feedback from peers and video recordings allow continuous improvement. This article provides actionable tips to help you become a confident and compelling public speaker.",
+    "author": "Liam Carter",
+    "category": "Business",
+    "date": "2025-07-09T00:00:00.000Z",
+    "updatedAt": "2025-07-09T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/1181371/pexels-photo-1181371.jpeg"
+  },
+  {
+    "userId": "user2",
+    "title": "Guide to Plant-Based Nutrition",
+    "slug": "guide-to-plant-based-nutrition",
+    "excerpt": "Understanding benefits and essentials of a plant-based diet.",
+    "content": "A plant-based diet emphasizes foods derived from plants, including vegetables, fruits, grains, nuts, and legumes. It offers numerous health benefits, such as lower risks of heart disease, diabetes, and certain cancers. Essential nutrients like protein, iron, and B12 can be obtained through careful meal planning and supplementation when necessary. Transitioning gradually helps ease adjustment and ensures nutrient adequacy. This article covers the fundamentals of plant-based nutrition, meal ideas, and tips to maintain a balanced and enjoyable diet that supports overall health and sustainability.",
+    "author": "Sophia Bennett",
+    "category": "Health",
+    "date": "2025-07-08T00:00:00.000Z",
+    "updatedAt": "2025-07-08T00:00:00.000Z",
+    "imageURL": "https://images.pexels.com/photos/1640771/pexels-photo-1640771.jpeg"
+  }
+]
+
+
+export {mockUsers, mockBlogPosts}

@@ -1,0 +1,209 @@
+@import "tailwindcss";
+html{scroll-behavior: smooth;}
+
+:root {
+  /* Light Theme */
+  --light-background-color: #edebeb; /* White */
+  --light-text-color-primary: #333333; /* Dark Gray */
+  --light-text-color-secondary: #666666; /* Medium Gray */
+  --light-text-color-tertiary: #111010; /* Light Gray */
+
+  --list-color: #111010;
+
+  --bg-blogpost: #FAF0E6;
+  --bg-surface: #eeebeb;
+  --login-form-bg: white;
+
+  /* NEW: Define background colors for the new class for light theme */
+  --dashboard-panel-bg-light: #dfdfdf; /* White for light theme panels */
+  --nested-card-bg-light: #f8f9fa; /* Slightly off-white for nested cards */
+
+  /* Dark Theme */
+  --dark-background-color: #04162a; /* Very Dark Gray */
+  --dark-text-color-primary: #f0f0f0; /* Off-white */
+  --dark-text-color-secondary: #cccccc; /* Light Gray */
+  --dark-text-color-tertiary: #c3c1c1; /* Medium Gray */
+}
+
+/* --- Base Styles & Automatic Light Theme Defaults --- */
+body {
+  background-color: var(--light-background-color);
+  color: var(--light-text-color-primary); /* Default for all text */
+  font-family: Arial, sans-serif;
+}
+
+/* NEW: Custom CSS classes that use the theme variables */
+.dashboard-panel-bg {
+  background-color: var(--dashboard-panel-bg-light);
+}
+
+.dark-theme .dashboard-panel-bg {
+  background-color: var(--dashboard-panel-bg-dark);
+}
+
+.nested-card-bg {
+  background-color: var(--nested-card-bg-light);
+}
+
+.dark-theme .nested-card-bg {
+  background-color: var(--nested-card-bg-dark);
+}
+
+h1 {
+  color: var(--light-text-color-primary); /* H1 automatically primary */
+}
+
+h2 {
+  color: var(--light-text-color-secondary); /* H2 automatically secondary */
+}
+
+h3, span {
+  color: var(--light-text-color-tertiary); /* H3 automatically tertiary */
+}
+.span-cls {
+  color: var(--light-text-color-tertiary); /* H3 automatically tertiary */
+}
+
+/* Paragraphs and other general text can default to primary or secondary */
+p {
+  color: var(--light-text-color-primary);
+}
+
+label {
+  color: rgb(31, 31, 31);
+}
+
+/* --- Automatic Dark Theme Overrides --- */
+.dark-theme {
+  background-color: var(--dark-background-color);
+  color: var(--dark-text-color-primary); /* Default for all text in dark theme */
+
+  --list-color: white;
+
+  --bg-blogpost: #070b1d;
+  --bg-surface: #070b1d;
+  --login-form-bg: #131525;
+
+  /* NEW: Define background colors for the new class for dark theme */
+  --dashboard-panel-bg-dark: #1f2736; /* Darker gray for dark theme panels */
+  --nested-card-bg-dark: #1f2937; /* Even darker for nested cards */
+}
+
+.dark-theme h1 {
+  color: var(--dark-text-color-primary); /* H1 automatically primary in dark theme */
+}
+
+.dark-theme h2 {
+  color: var(--dark-text-color-secondary); /* H2 automatically secondary in dark theme */
+}
+
+.dark-theme h3, span {
+  color: var(--dark-text-color-tertiary); /* H3 automatically tertiary in dark theme */
+}
+
+.dark-theme.span-cls {
+  color: var(--dark-text-color-tertiary); /* H3 automatically tertiary in dark theme */
+}
+
+.dark-theme p {
+  color: var(--dark-text-color-primary); /* Paragraphs in dark theme */
+}
+
+.dark-theme label {
+  color: var(--dark-text-color-primary); /* Paragraphs in dark theme */
+}
+
+.bg-blogpost{
+  background-color: var(--bg-blogpost);
+}
+.bg-surface {
+  background-color: var(--bg-surface);
+}
+.login-form-bg {
+  background-color: var(--login-form-bg);
+}
+
+/* You can still keep these general utility classes for specific overrides if ever needed,
+   but elements like h2 and h3 will get their colors automatically based on the above rules. */
+.primary-text { color: var(--light-text-color-primary); }
+.secondary-text { color: var(--light-text-color-secondary); }
+.tertiary-text { color: var(--light-text-color-tertiary); }
+
+.dark-theme .primary-text { color: var(--dark-text-color-primary); }
+.dark-theme .secondary-text { color: var(--dark-text-color-secondary); }
+.dark-theme .tertiary-text { color: var(--dark-text-color-tertiary); }
+
+.blogpost ul>li em, ol>li em {
+  color: var(--list-color);
+}
+
+.blogpost > * {
+  margin-top: 1rem;
+  font-size: 18px;
+}
+.blogpost ul li {
+  list-style: circle !important;
+}
+.blogpost ol li {
+  list-style: decimal !important;
+}
+.blogpost li {
+  margin-left: 30px;
+}
+.blogpost img {
+  margin: 0;
+}
+.blogpost a {
+  color: royalblue;
+  text-decoration: underline;
+}
+.blogpost h1 {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+/* You might want to remove the default focus outline from buttons for a cleaner look */
+button:focus {
+  outline: none;
+}
+
+/* Add this to your global CSS file (e.g., globals.css or styles.css) */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-card-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0; /* Start hidden for animation */
+}
+
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Keeps the track invisible */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a0a0a0; /* Medium grey for the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* On hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #808080; /* Slightly darker grey on hover */
+}
+
+/* For Firefox */
+body { /* Or apply to the specific scrollable element */
+  scrollbar-width: thin; /* Makes the scrollbar narrow */
+  scrollbar-color: #a0a0a0 transparent; /* thumb color track color */
+}

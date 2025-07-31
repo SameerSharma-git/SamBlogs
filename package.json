@@ -1,0 +1,35 @@
+{
+  "name": "blog-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.8.2",
+    "bcrypt": "^6.0.0",
+    "date-fns": "^4.1.0",
+    "draft-js": "^0.11.7",
+    "draft-js-export-html": "^1.4.1",
+    "gsap": "^3.13.0",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.525.0",
+    "mongoose": "^8.16.3",
+    "next": "15.3.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.60.0",
+    "react-redux": "^9.2.0",
+    "styled-jsx": "^5.1.7"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.5",
+    "tailwindcss": "^4"
+  }
+}
